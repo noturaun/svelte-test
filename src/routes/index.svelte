@@ -4,8 +4,11 @@
     let title = "";
     let tags="";
 
+    let remote_url = `https://flickertest.herokuapp.com/feeds?tags`;
+    let local_url = `http://localhost:8080/feeds?tags`;
+
     onMount(async () => {
-        const res = await fetch(`https://fierce-cliffs-36921.herokuapp.com/feeds?tags`)
+        const res = await fetch(remote_url)
         const data = await res.json()
         items = data.items
     })
